@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%-include("./partials/head") %>
+  <title>Add new Blog</title>
+</head>
+<style>
+  .navbar {
+      background-color: rgb(155, 162, 227);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  
+    .dropdown-menu {
+      padding: 10px;
+    }
+  
+    
+    .dropdown-item {
+      background-color: #e95025;
+      
+    }
+</style>
+
+<body>
+     <%-include("./partials/nav") %>
+      <div class="container mt-3">
+        <form action="/blogs" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="coverimage" class="form-label">Cover iamge</label>
+                <input 
+                type="file" 
+                class="form-control"
+                 id="coverimage" name="coverimage"
+                  aria-describedby="coverimage"/>
+
+             </div>   
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input 
+                type="text" 
+                class="form-control"
+                 id="title" name="title"
+                  aria-describedby="title"/>
+
+             </div>   
+            <div class="mb-3">
+                <label for="body" class="form-label">Body</label>
+                <textarea name="body"class="form-control" id="body" ></textarea>
+             </div>   
+             <div class="mb-3">
+              <button class="btn btn-info">submit</button>
+             </div>
+        </form>
+      </div>
+    <%-include("./partials/script") %>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-light" data-bs-theme="dark">
+    <div class="container-fluid">
+     
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">BlogDunia</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+         <% if (locals.user) { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/blogs/add-new">Add Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/blogs/all-posts/<%=user._id%>">All Posts</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <!-- suva -->
+              <%= locals.user.fullname %>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/users/logout">Logout</a></li>
+              
+            </ul>
+          </li>
+         <% } else{%>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/signup">Sign up</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/signin">Signin</a>
+          </li>
+          <%}%>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <% if(locals.error){ %>
+    <div class="container mt-4">
+      <div class="alert alert-danger" role="alert">
+       <%=locals.error %>
+      </div>
+    </div>
+
+    <% } %>

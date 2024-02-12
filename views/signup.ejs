@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%-include("./partials/head") %>
+  <title>signup</title>
+</head>
+<style>
+  .navbar {
+    background-color: rgb(103, 112, 190);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+    }
+  
+    .dropdown-menu {
+      padding: 10px;
+    }
+  
+    
+    .dropdown-item {
+      background-color: #b4d9f3;
+      
+    }
+</style>
+<body>
+  <%-include("./partials/nav") %>
+     <div class="container mt-4">
+        <form action="/users/signup" method="post">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Fullname</label>
+              <input type="text" name="fullname"class="form-control" id="fullname" aria-describedby="fullnameHelp">
+             
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" name="email"class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+             
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+           
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+     </div>
+    <%-include("./partials/script") %>
+</body>
+</html>
